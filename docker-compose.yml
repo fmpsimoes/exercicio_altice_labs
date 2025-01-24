@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  node-app:
+    build:
+      context: ./labseq-ui
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./labseq-ui:/app
+    depends_on:
+      - quarkus-app
+
+  quarkus-app:
+    build:
+      context: ./code-with-quarkus
+      dockerfile: src/main/docker/Dockerfile.jvm
+    ports:
+      - "8080:8080"
+    environment:
+      JAVA_OPTS_APPEND: "-Dquarkus.http.host=0.0.0.0"

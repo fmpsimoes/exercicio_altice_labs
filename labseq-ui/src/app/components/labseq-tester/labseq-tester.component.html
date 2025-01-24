@@ -1,0 +1,13 @@
+<div>
+    <label for="inputNumber">Insira um número:</label>
+    <input type="number" id="inputNumber" [(ngModel)]="inputNumber" name="inputNumber" (keydown.enter)="getCalcLabseq()"  min="0" required />
+    <button (click)="getCalcLabseq()">Calcular</button>
+</div>
+
+<div *ngIf="result">
+    <p>{{ result }}</p>
+</div>
+
+<div *ngIf="error">
+    <p class="error">Erro: {{ error }}</p>
+</div>

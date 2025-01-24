@@ -1,0 +1,15 @@
+h1{
+    margin: auto;
+}
+div{
+    margin: auto;
+}
+main{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
